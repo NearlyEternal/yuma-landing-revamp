@@ -25,7 +25,7 @@ export default function Home() {
         <div className="container flex items-center justify-between py-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="text-xl font-bold text-white tracking-wider">YUMA LANDING</span>
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold">Menu</a>
