@@ -21,10 +21,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
-        <div className="container flex items-center justify-between py-3">
+      <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg transition-all duration-300" style={{paddingTop: scrollY > 100 ? '8px' : '12px', paddingBottom: scrollY > 100 ? '8px' : '12px'}}>
+        <div className="container flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 transition-all duration-300" style={{transform: scrollY > 100 ? 'scale(0.85)' : 'scale(1)'}}>
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -68,27 +68,23 @@ export default function Home() {
       </section>
 
       {/* Venues Section */}
-      <section id="venues" className="py-20 bg-background">
+      <section id="venues" className="py-12 bg-background">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">
             Three Unique <span className="text-primary">Experiences</span>
           </h2>
 
           {/* Venue Tabs */}
-          <div className="flex flex-col md:flex-row gap-8 mb-12">
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
             {/* Restaurant */}
             <div
               onClick={() => setActiveTab("restaurant")}
-              className={`flex-1 p-8 rounded cursor-pointer transition-all ${
-                activeTab === "restaurant"
-                  ? "bg-primary text-white shadow-xl"
-                  : "bg-card text-foreground border-2 border-border hover:border-primary"
-              }`}
+              className={`flex-1 p-4 rounded cursor-pointer transition-all ${activeTab === "restaurant" ? "bg-primary text-white shadow-lg" : "bg-card text-foreground border-2 border-border hover:border-primary"}`}
             >
-              <h3 className="text-2xl font-display font-bold mb-3">Restaurant</h3>
-              <p className="mb-4 opacity-90">Full breakfast, lunch, and dinner menu with steaks, seafood, pasta, and more.</p>
-              <div className="flex items-center gap-2 text-sm">
-                <Clock size={16} />
+              <h3 className="text-lg font-display font-bold mb-2">Restaurant</h3>
+              <p className="mb-2 opacity-90 text-sm">Full breakfast, lunch, and dinner menu with steaks, seafood, pasta, and more.</p>
+              <div className="flex items-center gap-2 text-xs">
+                <Clock size={14} />
                 <span>6 AM - 11 PM</span>
               </div>
             </div>
@@ -96,16 +92,12 @@ export default function Home() {
             {/* Hangar Sports Bar */}
             <div
               onClick={() => setActiveTab("hangar")}
-              className={`flex-1 p-8 rounded cursor-pointer transition-all ${
-                activeTab === "hangar"
-                  ? "bg-primary text-white shadow-xl"
-                  : "bg-card text-foreground border-2 border-border hover:border-primary"
-              }`}
+              className={`flex-1 p-4 rounded cursor-pointer transition-all ${activeTab === "hangar" ? "bg-primary text-white shadow-lg" : "bg-card text-foreground border-2 border-border hover:border-primary"}`}
             >
-              <h3 className="text-2xl font-display font-bold mb-3">Hangar Sports Bar</h3>
-              <p className="mb-4 opacity-90">24 beers on tap, appetizers, and all your favorite sports on big screens.</p>
-              <div className="flex items-center gap-2 text-sm">
-                <Clock size={16} />
+              <h3 className="text-lg font-display font-bold mb-2">Hangar Sports Bar</h3>
+              <p className="mb-2 opacity-90 text-sm">24 beers on tap, appetizers, and all your favorite sports on big screens.</p>
+              <div className="flex items-center gap-2 text-xs">
+                <Clock size={14} />
                 <span>11 AM - 11 PM</span>
               </div>
             </div>
@@ -113,23 +105,19 @@ export default function Home() {
             {/* Captain's Lounge */}
             <div
               onClick={() => setActiveTab("lounge")}
-              className={`flex-1 p-8 rounded cursor-pointer transition-all ${
-                activeTab === "lounge"
-                  ? "bg-primary text-white shadow-xl"
-                  : "bg-card text-foreground border-2 border-border hover:border-primary"
-              }`}
+              className={`flex-1 p-4 rounded cursor-pointer transition-all ${activeTab === "lounge" ? "bg-primary text-white shadow-lg" : "bg-card text-foreground border-2 border-border hover:border-primary"}`}
             >
-              <h3 className="text-2xl font-display font-bold mb-3">Captain's Lounge</h3>
-              <p className="mb-4 opacity-90">Premium liquors, specialty coffee drinks, and an intimate atmosphere.</p>
-              <div className="flex items-center gap-2 text-sm">
-                <Clock size={16} />
+              <h3 className="text-lg font-display font-bold mb-2">Captain's Lounge</h3>
+              <p className="mb-2 opacity-90 text-sm">Premium liquors, specialty coffee drinks, and an intimate atmosphere.</p>
+              <div className="flex items-center gap-2 text-xs">
+                <Clock size={14} />
                 <span>11 AM - 11 PM</span>
               </div>
             </div>
           </div>
 
           {/* Active Venue Image with Overlaid Text */}
-          <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl border-4 border-primary">
+          <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-2xl border-4 border-primary">
             {activeTab === "hangar" && (
               <>
                 <img
@@ -138,10 +126,10 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Hangar Sports Bar</h3>
-                    <p className="text-lg md:text-xl">Full-service bar with appetizers, main entrees, and 24 beers on tap. Covers all sports including college and pro football.</p>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">Hangar Sports Bar</h3>
+                    <p className="text-sm md:text-base">Full-service bar with appetizers, main entrees, and 24 beers on tap. Covers all sports including college and pro football.</p>
                   </div>
                 </div>
               </>
@@ -154,10 +142,10 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Restaurant</h3>
-                    <p className="text-lg md:text-xl">Full breakfast, lunch, and dinner menu featuring steaks, seafood, pasta dishes, South-of-the-Border specialties, burgers, salads, and more.</p>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">Restaurant</h3>
+                    <p className="text-sm md:text-base">Full breakfast, lunch, and dinner menu featuring steaks, seafood, pasta dishes, South-of-the-Border specialties, burgers, salads, and more.</p>
                   </div>
                 </div>
               </>
@@ -170,10 +158,10 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Captain's Lounge (San Luis)</h3>
-                    <p className="text-lg md:text-xl">A more intimate setting with premium liquors and specialty coffee drinks. Perfect for a sophisticated evening out.</p>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">Captain's Lounge (San Luis)</h3>
+                    <p className="text-sm md:text-base">A more intimate setting with premium liquors and specialty coffee drinks. Perfect for a sophisticated evening out.</p>
                   </div>
                 </div>
               </>
