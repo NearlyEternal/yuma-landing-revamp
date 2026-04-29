@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap');
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -122,12 +122,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Play', sans-serif;
     font-weight: 700;
-    letter-spacing: -0.02em;
   }
   h1 {
     @apply text-5xl md:text-6xl;
@@ -142,10 +141,11 @@
     @apply text-2xl md:text-3xl;
   }
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
   }
   .font-mono-alt {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Open Sans', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
