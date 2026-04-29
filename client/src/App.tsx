@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Hangar from "./pages/Hangar";
 import CaptainsLounge from "./pages/CaptainsLounge";
+import AboutUs from "./pages/AboutUs";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/hangar" component={Hangar} />
       <Route path="/captains-lounge" component={CaptainsLounge} />
+      <Route path="/about" component={AboutUs} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

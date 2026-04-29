@@ -182,6 +182,23 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Contact Info Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl font-display font-bold text-primary mb-6 text-center">Get in Touch</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="text-center">
+              <h3 className="text-lg font-display font-bold text-primary mb-2">Make a Reservation</h3>
+              <p className="text-gray-700 mb-4">Use the form above to reserve a table at Yuma Landing. We look forward to hosting you!</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-display font-bold text-primary mb-2">Send us a Message</h3>
+              <p className="text-gray-700 mb-4">Have questions? Fill out the contact form above and we'll get back to you as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between">

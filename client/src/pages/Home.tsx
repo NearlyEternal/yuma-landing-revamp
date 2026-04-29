@@ -37,8 +37,9 @@ export default function Home() {
           </a>
           <div className="hidden lg:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Menu</a>
-            <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Hangar Sports Bar</a>
             <a href="/captains-lounge" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Captain's Lounge</a>
+            <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Hangar Sports Bar</a>
+            <a href="/about" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>About Us</a>
             <a href="/contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
           </div>
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 hover:opacity-80 transition-opacity">
@@ -50,8 +51,9 @@ export default function Home() {
           <div className="lg:hidden bg-primary text-primary-foreground border-t border-white/20">
             <div className="container py-4 space-y-3">
               <a href="#menu" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Menu</a>
-              <a href="/hangar" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Hangar Sports Bar</a>
               <a href="/captains-lounge" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Captain's Lounge</a>
+              <a href="/hangar" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Hangar Sports Bar</a>
+              <a href="/about" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>About Us</a>
               <a href="/contact" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Contact</a>
             </div>
           </div>
@@ -72,7 +74,8 @@ export default function Home() {
               A Fun Night Out Begins Here
             </h2>
             <p className="text-xl text-white/95 mb-8 max-w-xl">
-              Welcome to Yuma Landing Bar & Grill, a historic and beloved full-bar restaurant in Yuma, AZ, where great food and fun take flight. We are proud to be a cornerstone of Yuma's dining scene, offering a full-service experience celebrating our city's rich aviation history.
+              Welcome to Yuma Landing Bar & Grill, a historic and beloved full-bar restaurant in Yuma, AZ, where great food and fun take flight. We are proud to be a cornerstone of Yuma's dining scene, offering a full-service experience celebrating our city's rich aviation history.{" "}
+              <a href="/about" className="underline hover:opacity-80 transition-opacity">Learn More</a>
             </p>
             <div className="flex gap-4">
               <a href="https://orders.hazlnut.com/menu/b/Yuma%20Landing%20Bar%20&%20Grill/n/303/p/82/g/1277" target="_blank" rel="noopener noreferrer">
@@ -112,19 +115,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hangar Sports Bar */}
-            <div
-              onClick={() => setActiveTab("hangar")}
-              className={`flex-1 p-4 rounded cursor-pointer transition-all ${activeTab === "hangar" ? "bg-primary text-white shadow-lg" : "bg-card text-foreground border-2 border-border hover:border-primary"}`}
-            >
-              <h3 className="text-lg font-display font-bold mb-2">Hangar Sports Bar</h3>
-              <p className="mb-2 opacity-90 text-sm">24 beers on tap, appetizers, and all your favorite sports on big screens.</p>
-              <div className="flex items-center gap-2 text-xs">
-                <Clock size={14} />
-                <span>11 AM - 11 PM</span>
-              </div>
-            </div>
-
             {/* Captain's Lounge */}
             <div
               onClick={() => setActiveTab("lounge")}
@@ -132,6 +122,19 @@ export default function Home() {
             >
               <h3 className="text-lg font-display font-bold mb-2">Captain's Lounge</h3>
               <p className="mb-2 opacity-90 text-sm">Premium liquors, specialty coffee drinks, and an intimate atmosphere.</p>
+              <div className="flex items-center gap-2 text-xs">
+                <Clock size={14} />
+                <span>11 AM - 11 PM</span>
+              </div>
+            </div>
+
+            {/* Hangar Sports Bar */}
+            <div
+              onClick={() => setActiveTab("hangar")}
+              className={`flex-1 p-4 rounded cursor-pointer transition-all ${activeTab === "hangar" ? "bg-primary text-white shadow-lg" : "bg-card text-foreground border-2 border-border hover:border-primary"}`}
+            >
+              <h3 className="text-lg font-display font-bold mb-2">Hangar Sports Bar</h3>
+              <p className="mb-2 opacity-90 text-sm">24 beers on tap, appetizers, and all your favorite sports on big screens.</p>
               <div className="flex items-center gap-2 text-xs">
                 <Clock size={14} />
                 <span>11 AM - 11 PM</span>
