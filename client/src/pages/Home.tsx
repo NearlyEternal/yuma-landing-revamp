@@ -37,9 +37,9 @@ export default function Home() {
             <a href="/contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
           </div>
           <div className="flex items-center gap-2">
-            <a href="tel:(928)782-7427" className="hidden sm:flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
+            <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-3 py-2 rounded font-bold hover:opacity-90 transition-opacity lg:px-4">
               <Phone size={18} />
-              <span className="hidden sm:inline">(928) 782-7427</span>
+              <span className="hidden sm:inline lg:inline">(928) 782-7427</span>
             </a>
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 hover:opacity-80 transition-opacity">
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
