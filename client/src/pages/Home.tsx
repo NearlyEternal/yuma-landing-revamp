@@ -43,7 +43,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen md:h-[600px] overflow-hidden">
+      <section id="top" className="relative h-screen md:h-[600px] overflow-hidden">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hero-main-CZX3j4y3i4grM3FR9ScKij.webp"
           alt="Yuma Landing Bar & Grill"
@@ -175,12 +175,12 @@ export default function Home() {
             {/* Learn More Button */}
             <div className="flex justify-center">
               {activeTab === "hangar" && (
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => setLocation("/hangar")}>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => {setLocation("/hangar"); setTimeout(() => window.scrollTo(0, 0), 100)}}>
                   Learn More
                 </Button>
               )}
               {activeTab === "lounge" && (
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => setLocation("/captains-lounge")}>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => {setLocation("/captains-lounge"); setTimeout(() => window.scrollTo(0, 0), 100)}}>
                   Learn More
                 </Button>
               )}

@@ -1,17 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useLocation } from "wouter";
+import { useState, useEffect } from "react";
 
 export default function CaptainsLounge() {
   const [, setLocation] = useLocation();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
-        <div className="container flex items-center justify-between py-3">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setLocation("/")}>
-            <span className="text-xl font-bold text-white tracking-wider">YUMA LANDING</span>
+      <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg transition-all duration-300" style={{paddingTop: scrollY > 100 ? '8px' : '12px', paddingBottom: scrollY > 100 ? '8px' : '12px'}}>
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center gap-2 cursor-pointer transition-all duration-300" onClick={() => setLocation("/")} style={{transform: scrollY > 100 ? 'scale(0.85)' : 'scale(1)'}}>
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="/" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Home</a>
