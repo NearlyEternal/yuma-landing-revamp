@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 /**
  * Yuma Landing Bar & Grill - Modern Website
@@ -11,6 +12,7 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"restaurant" | "hangar" | "lounge">("restaurant");
   const [scrollY, setScrollY] = useState(0);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -29,7 +31,8 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Menu</a>
-            <a href="#venues" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Venues</a>
+            <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Hangar Sports Bar</a>
+            <a href="/captains-lounge" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Captain's Lounge</a>
             <a href="#contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Contact</a>
           </div>
           <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
@@ -56,9 +59,11 @@ export default function Home() {
               Historic aviation-themed bar & grill in Yuma, AZ. Premium steaks, fresh seafood, and 24 beers on tap.
             </p>
             <div className="flex gap-4">
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
-                Order Online
-              </Button>
+              <a href="https://orders.hazlnut.com/menu/b/Yuma%20Landing%20Bar%20&%20Grill/n/303/p/82/g/1277" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
+                  Order Online
+                </Button>
+              </a>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
                 Reserve Table
               </Button>
@@ -116,8 +121,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Active Venue Image with Overlaid Text */}
-          <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-2xl border-4 border-primary">
+          {/* Active Venue Image with Overlaid Text and Learn More Button */}
+          <div className="space-y-4">
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-2xl border-4 border-primary">
             {activeTab === "hangar" && (
               <>
                 <img
@@ -164,8 +170,28 @@ export default function Home() {
                     <p className="text-sm md:text-base">A more intimate setting with premium liquors and specialty coffee drinks. Perfect for a sophisticated evening out.</p>
                   </div>
                 </div>
-              </>
-            )}
+              </>            )}
+            </div>
+            {/* Learn More Button */}
+            <div className="flex justify-center">
+              {activeTab === "hangar" && (
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => setLocation("/hangar")}>
+                  Learn More
+                </Button>
+              )}
+              {activeTab === "lounge" && (
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold" onClick={() => setLocation("/captains-lounge")}>
+                  Learn More
+                </Button>
+              )}
+              {activeTab === "restaurant" && (
+                <a href="#menu">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold">
+                    Learn More
+                  </Button>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -222,9 +248,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
-                View Full Menu
-              </Button>
+              <a href="https://orders.hazlnut.com/menu/b/Yuma%20Landing%20Bar%20&%20Grill/n/303/p/82/g/1277" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
+                  Order Online
+                </Button>
+              </a>
             </div>
             <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl border-4 border-white">
               <img
