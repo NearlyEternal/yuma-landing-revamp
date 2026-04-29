@@ -23,13 +23,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
         <div className="container flex items-center justify-between py-3">
-          {/* Logo */}
+          {/* Logo - Text Logo */}
           <div className="flex items-center gap-2">
-            <img 
-              src="/manus-storage/yuma-landing-logo_cfd3c73f.webp" 
-              alt="Yuma Landing Bar & Grill Logo" 
-              className="h-14 w-auto"
-            />
+            <span className="text-2xl font-bold text-white">YUMA</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold">Menu</a>
@@ -161,23 +157,22 @@ export default function Home() {
       </section>
 
       {/* Menu Preview Section with Parallax Background */}
-      <section id="menu" className="relative py-20 overflow-hidden">
+      <section id="menu" className="relative min-h-screen md:min-h-[700px] flex items-center overflow-hidden">
         {/* Parallax Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-food-showcase-RRwMwwXEa8wgQxHfFYUYXU.webp')",
-            backgroundAttachment: "fixed",
             backgroundPosition: "center",
-            transform: `translateY(${Math.max(0, scrollY * 0.3)}px)`,
+            transform: `translateY(${Math.max(0, (scrollY - 1100) * 0.4)}px)`,
             willChange: "transform",
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-primary/85"></div>
+        <div className="absolute inset-0 bg-primary/80"></div>
 
         {/* Content */}
-        <div className="relative container">
+        <div className="relative container py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
