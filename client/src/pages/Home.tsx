@@ -23,9 +23,13 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
         <div className="container flex items-center justify-between py-3">
-          {/* Logo - Text Logo */}
+          {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-white">YUMA</span>
+            <img 
+              src="/manus-storage/yuma-landing-top_6e97b8a8.png" 
+              alt="Yuma Landing Bar & Grill Logo" 
+              className="h-16 w-auto"
+            />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold">Menu</a>
@@ -168,8 +172,7 @@ export default function Home() {
             willChange: "transform",
           }}
         />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-primary/80"></div>
+        {/* No overlay - show image directly */}
 
         {/* Content */}
         <div className="relative container py-20">
