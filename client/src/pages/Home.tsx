@@ -23,6 +23,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Floating Phone Button */}
+      <a href="tel:(928)782-7427" className="fixed bottom-8 right-8 z-40 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300">
+        <Phone size={24} />
+      </a>
+
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg transition-all duration-300" style={{paddingTop: scrollY > 100 ? '8px' : '12px', paddingBottom: scrollY > 100 ? '8px' : '12px'}}>
         <div className="container flex items-center justify-between">
@@ -36,15 +41,9 @@ export default function Home() {
             <a href="/captains-lounge" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Captain's Lounge</a>
             <a href="/contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
           </div>
-          <div className="flex items-center gap-2">
-            <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-3 py-2 rounded font-bold hover:opacity-90 transition-opacity lg:px-4">
-              <Phone size={18} />
-              <span className="hidden sm:inline lg:inline">(928) 782-7427</span>
-            </a>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 hover:opacity-80 transition-opacity">
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 hover:opacity-80 transition-opacity">
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
         {/* Mobile Menu */}
         {mobileMenuOpen && (
