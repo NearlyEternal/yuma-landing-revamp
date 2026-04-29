@@ -72,7 +72,7 @@ export default function Home() {
               A Fun Night Out Begins Here
             </h2>
             <p className="text-xl text-white/95 mb-8 max-w-xl">
-              Historic aviation-themed bar & grill in Yuma, AZ. Premium steaks, fresh seafood, and 24 beers on tap.
+              Welcome to Yuma Landing Bar & Grill, a historic and beloved full-bar restaurant in Yuma, AZ, where great food and fun take flight. We are proud to be a cornerstone of Yuma's dining scene, offering a full-service experience celebrating our city's rich aviation history.
             </p>
             <div className="flex gap-4">
               <a href="https://orders.hazlnut.com/menu/b/Yuma%20Landing%20Bar%20&%20Grill/n/303/p/82/g/1277" target="_blank" rel="noopener noreferrer">
@@ -153,7 +153,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">Hangar Sports Bar</h3>
-                    <p className="text-sm md:text-base">Full-service bar with appetizers, main entrees, and 24 beers on tap. Covers all sports including college and pro football.</p>
+                    <p className="text-sm md:text-base">The Hangar Sports Bar & Grill at the Yuma Landing covers all sports including college and pro football. The Hangar Sports Bar & Grill is a full-service bar that serves appetizers, main entrees, and 24 beers on tap, from Guinness to Budweiser.</p>
                   </div>
                 </div>
               </>
@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">Restaurant</h3>
-                    <p className="text-sm md:text-base">Full breakfast, lunch, and dinner menu featuring steaks, seafood, pasta dishes, South-of-the-Border specialties, burgers, salads, and more.</p>
+                    <p className="text-sm md:text-base">Open daily, the Yuma Landing Bar & Grill serves a full breakfast, lunch and dinner menu that includes steaks and seafood, pasta dishes, South-of-the-Border dishes, burgers, salads, and more.</p>
                   </div>
                 </div>
               </>
@@ -185,7 +185,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex items-center justify-center p-4">
                   <div className="text-center text-white max-w-2xl">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">Captain's Lounge (San Luis)</h3>
-                    <p className="text-sm md:text-base">A more intimate setting with premium liquors and specialty coffee drinks. Perfect for a sophisticated evening out.</p>
+                    <p className="text-sm md:text-base">If you are looking for a more intimate setting, the Captain's Lounge is for you. We serve Premium Liquors and specialty coffee drinks.</p>
                   </div>
                 </div>
               </>            )}

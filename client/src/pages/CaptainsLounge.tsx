@@ -64,7 +64,7 @@ export default function CaptainsLounge() {
               Captain's Lounge
             </h1>
             <p className="text-xl text-white/95 mb-8 max-w-xl">
-              An intimate setting with premium liquors and specialty coffee drinks. Located in San Luis.
+              If you are looking for a more intimate setting, the Captain's Lounge is for you. We serve Premium Liquors and specialty coffee drinks.
             </p>
             <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
               Order Online

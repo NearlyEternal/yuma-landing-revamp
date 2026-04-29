@@ -64,7 +64,7 @@ export default function Hangar() {
               Hangar Sports Bar
             </h1>
             <p className="text-xl text-white/95 mb-8 max-w-xl">
-              All the action, all the time. 24 beers on tap, great food, and every game on the big screen.
+              The Hangar Sports Bar & Grill at the Yuma Landing covers all sports including college and pro football. The Hangar Sports Bar & Grill is a full-service bar that serves appetizers, main entrees, and 24 beers on tap, from Guinness to Budweiser.
             </p>
             <Button size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold">
               Order Online
