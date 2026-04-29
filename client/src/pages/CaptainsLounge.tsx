@@ -22,10 +22,10 @@ export default function CaptainsLounge() {
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Home</a>
-            <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Hangar Sports Bar</a>
-            <a href="#" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Captain's Lounge</a>
-            <a href="/#contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Contact</a>
+            <a href="/" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Home</a>
+            <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Hangar Sports Bar</a>
+            <a href="#" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Captain's Lounge</a>
+            <a href="/#contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
           </div>
           <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
             <Phone size={18} />

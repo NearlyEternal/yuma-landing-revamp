@@ -128,6 +128,9 @@
     font-family: 'Play', sans-serif;
     font-weight: 700;
   }
+  p, span, a, button, input, textarea, select {
+    font-family: 'Open Sans', sans-serif;
+  }
   h1 {
     @apply text-5xl md:text-6xl;
   }
