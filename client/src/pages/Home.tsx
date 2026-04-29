@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -12,6 +12,7 @@ import { useLocation } from "wouter";
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"restaurant" | "hangar" | "lounge">("restaurant");
   const [scrollY, setScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [, setLocation] = useLocation();
 
   useEffect(() => {
@@ -29,17 +30,33 @@ export default function Home() {
           <a href="/#top" className="flex items-center gap-2 transition-all duration-300 hover:opacity-80" style={{transform: scrollY > 100 ? 'scale(0.85)' : 'scale(1)', cursor: 'pointer'}}>
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </a>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Menu</a>
             <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Hangar Sports Bar</a>
             <a href="/captains-lounge" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Captain's Lounge</a>
-            <a href="#contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
+            <a href="/contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Contact</a>
           </div>
-          <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
-            <Phone size={18} />
-            <span className="hidden sm:inline">(928) 782-7427</span>
-          </a>
+          <div className="flex items-center gap-2">
+            <a href="tel:(928)782-7427" className="hidden sm:flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
+              <Phone size={18} />
+              <span className="hidden sm:inline">(928) 782-7427</span>
+            </a>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 hover:opacity-80 transition-opacity">
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-primary text-primary-foreground border-t border-white/20">
+            <div className="container py-4 space-y-3">
+              <a href="#menu" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Menu</a>
+              <a href="/hangar" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Hangar Sports Bar</a>
+              <a href="/captains-lounge" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Captain's Lounge</a>
+              <a href="/contact" onClick={() => setMobileMenuOpen(false)} className="block hover:opacity-80 transition-opacity font-semibold py-2" style={{fontFamily: 'Play, sans-serif'}}>Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
