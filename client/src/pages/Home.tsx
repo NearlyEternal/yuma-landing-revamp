@@ -28,9 +28,9 @@ export default function Home() {
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold">Menu</a>
-            <a href="#venues" className="hover:opacity-80 transition-opacity font-semibold">Venues</a>
-            <a href="#contact" className="hover:opacity-80 transition-opacity font-semibold">Contact</a>
+            <a href="#menu" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Menu</a>
+            <a href="#venues" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Venues</a>
+            <a href="#contact" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Georgia, serif', fontSize: '18px'}}>Contact</a>
           </div>
           <a href="tel:(928)782-7427" className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold hover:opacity-90 transition-opacity">
             <Phone size={18} />
@@ -128,30 +128,56 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Active Venue Image */}
+          {/* Active Venue Image with Overlaid Text */}
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl border-4 border-primary">
             {activeTab === "hangar" && (
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hangar-bar-E7KH9uLTt8s7FsjBLXRDrq.webp"
-                alt="Hangar Sports Bar"
-                className="w-full h-full object-cover"
-              />
+              <>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hangar-bar-E7KH9uLTt8s7FsjBLXRDrq.webp"
+                  alt="Hangar Sports Bar"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center text-white max-w-2xl">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Hangar Sports Bar</h3>
+                    <p className="text-lg md:text-xl">Full-service bar with appetizers, main entrees, and 24 beers on tap. Covers all sports including college and pro football.</p>
+                  </div>
+                </div>
+              </>
             )}
             {activeTab === "restaurant" && (
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hero-main-CZX3j4y3i4grM3FR9ScKij.webp"
-                alt="Restaurant"
-                className="w-full h-full object-cover"
-              />
+              <>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hero-main-CZX3j4y3i4grM3FR9ScKij.webp"
+                  alt="Restaurant"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center text-white max-w-2xl">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Restaurant</h3>
+                    <p className="text-lg md:text-xl">Full breakfast, lunch, and dinner menu featuring steaks, seafood, pasta dishes, South-of-the-Border specialties, burgers, salads, and more.</p>
+                  </div>
+                </div>
+              </>
             )}
             {activeTab === "lounge" && (
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hero-main-CZX3j4y3i4grM3FR9ScKij.webp"
-                alt="Captain's Lounge"
-                className="w-full h-full object-cover"
-              />
+              <>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-hero-main-CZX3j4y3i4grM3FR9ScKij.webp"
+                  alt="Captain's Lounge"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center text-white max-w-2xl">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4">Captain's Lounge (San Luis)</h3>
+                    <p className="text-lg md:text-xl">A more intimate setting with premium liquors and specialty coffee drinks. Perfect for a sophisticated evening out.</p>
+                  </div>
+                </div>
+              </>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
           </div>
         </div>
       </section>
@@ -248,36 +274,33 @@ export default function Home() {
 
             {/* Location */}
             <div className="bg-card p-8 rounded-lg border-2 border-primary">
-              <h3 className="text-2xl font-display font-bold mb-6 text-primary">Location</h3>
-              <div className="flex gap-3 mb-4">
-                <MapPin className="text-primary flex-shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-bold text-foreground">Yuma Landing Bar & Grill</p>
-                  <p className="text-muted-foreground">195 South 4th Avenue</p>
-                  <p className="text-muted-foreground">Yuma, AZ 85364</p>
-                </div>
+              <h3 className="text-2xl font-display font-bold mb-6 text-primary flex items-center gap-2">
+                <MapPin size={24} />
+                Location
+              </h3>
+              <div className="space-y-2 text-sm">
+                <p className="font-semibold text-foreground">Yuma Landing Bar & Grill</p>
+                <p className="text-muted-foreground">195 South 4th Avenue</p>
+                <p className="text-muted-foreground">Yuma, AZ 85364</p>
+                <Button size="sm" variant="outline" className="mt-4 w-full">
+                  Get Directions
+                </Button>
               </div>
-              <Button variant="outline" className="w-full mt-4 border-primary text-primary hover:bg-primary/10 font-bold">
-                Get Directions
-              </Button>
             </div>
 
             {/* Contact */}
             <div className="bg-card p-8 rounded-lg border-2 border-primary">
-              <h3 className="text-2xl font-display font-bold mb-6 text-primary">Contact</h3>
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <Phone className="text-primary flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
-                    <a href="tel:(928)782-7427" className="font-bold text-foreground hover:text-primary transition-colors">
-                      (928) 782-7427
-                    </a>
-                  </div>
+              <h3 className="text-2xl font-display font-bold mb-6 text-primary flex items-center gap-2">
+                <Phone size={24} />
+                Contact
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="font-semibold text-foreground mb-2">(928) 782-7427</p>
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-white mb-2">
+                    Order Online
+                  </Button>
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold">
-                  Order Online
-                </Button>
               </div>
             </div>
           </div>
@@ -285,37 +308,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-12">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-display font-bold mb-4 text-lg">Yuma Landing</h4>
-              <p className="text-sm opacity-85">Historic aviation-themed bar & grill celebrating Yuma's rich heritage.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#menu" className="opacity-85 hover:opacity-100 transition-opacity">Menu</a></li>
-                <li><a href="#venues" className="opacity-85 hover:opacity-100 transition-opacity">Venues</a></li>
-                <li><a href="#contact" className="opacity-85 hover:opacity-100 transition-opacity">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Hours</h4>
-              <p className="text-sm opacity-85">Mon-Thurs: 6 AM - 10 PM</p>
-              <p className="text-sm opacity-85">Fri-Sat: 6 AM - 11 PM</p>
-              <p className="text-sm opacity-85">Sunday: 6 AM - 9 PM</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-lg">Contact</h4>
-              <p className="text-sm opacity-85">(928) 782-7427</p>
-              <p className="text-sm opacity-85">195 South 4th Avenue</p>
-              <p className="text-sm opacity-85">Yuma, AZ 85364</p>
-            </div>
-          </div>
-          <div className="border-t border-white/20 pt-8 text-center text-sm opacity-75">
-            <p>&copy; 2026 Yuma Landing Bar & Grill. All rights reserved.</p>
-          </div>
+      <footer className="bg-primary text-primary-foreground py-8">
+        <div className="container text-center text-sm">
+          <p>&copy; 2026 Yuma Landing Bar & Grill. All rights reserved.</p>
         </div>
       </footer>
     </div>
