@@ -114,14 +114,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Service Area */}
-              <div className="flex gap-4">
-                <MapIcon className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Service Area</h3>
-                  <p className="text-foreground/80">Yuma, Arizona</p>
-                </div>
-              </div>
+
             </div>
 
             {/* Contact Form */}
