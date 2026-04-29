@@ -64,9 +64,11 @@ export default function Home() {
                   Order Online
                 </Button>
               </a>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
-                Reserve Table
-              </Button>
+              <a href="/contact">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold">
+                  Reserve Table
+                </Button>
+              </a>
             </div>
           </div>
         </div>
