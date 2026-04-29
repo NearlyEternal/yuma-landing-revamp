@@ -26,7 +26,7 @@ export default function Home() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img 
-              src="/home/ubuntu/webdev-static-assets/yuma-landing-logo.webp" 
+              src="/manus-storage/yuma-landing-logo_cfd3c73f.webp" 
               alt="Yuma Landing Bar & Grill Logo" 
               className="h-14 w-auto"
             />
@@ -168,7 +168,9 @@ export default function Home() {
           style={{
             backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663610026698/M35vhbkmMv8tGsBc8875Xx/yuma-food-showcase-RRwMwwXEa8wgQxHfFYUYXU.webp')",
             backgroundAttachment: "fixed",
-            transform: `translateY(${scrollY * 0.5}px)`,
+            backgroundPosition: "center",
+            transform: `translateY(${Math.max(0, scrollY * 0.3)}px)`,
+            willChange: "transform",
           }}
         />
         {/* Dark Overlay */}
