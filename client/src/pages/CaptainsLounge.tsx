@@ -18,9 +18,9 @@ export default function CaptainsLounge() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg transition-all duration-300" style={{paddingTop: scrollY > 100 ? '8px' : '12px', paddingBottom: scrollY > 100 ? '8px' : '12px'}}>
         <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer transition-all duration-300" onClick={() => setLocation("/")} style={{transform: scrollY > 100 ? 'scale(0.85)' : 'scale(1)'}}>
+          <a href="/#top" className="flex items-center gap-2 cursor-pointer transition-all duration-300 hover:opacity-80" style={{transform: scrollY > 100 ? 'scale(0.85)' : 'scale(1)'}}>
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663610026698/oAgSEXOUvrQWUciM.png" alt="Yuma Landing Logo" className="h-16 w-auto" style={{cursor: 'pointer'}} />
-          </div>
+          </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="/#menu" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Menu</a>
             <a href="/hangar" className="hover:opacity-80 transition-opacity font-semibold" style={{fontFamily: 'Play, sans-serif', fontSize: '18px'}}>Hangar Sports Bar</a>
